@@ -1,0 +1,29 @@
+{
+  "name": "capstone-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "secrets.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "resetdb": "dropdb tabletalk; createdb tabletalk; psql -d tabletalk -f schema.sql; psql -d tabletalk -f seeds.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smuntean/table-talk-tutor-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smuntean/table-talk-tutor-backend/issues"
+  },
+  "homepage": "https://github.com/smuntean/table-talk-tutor-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "node-fetch": "^2.2.0",
+    "nonce-str": "^1.0.1",
+    "pg-promise": "^8.4.6",
+    "twitter": "^1.7.1"
+  }
+}

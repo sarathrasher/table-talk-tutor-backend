@@ -2,7 +2,7 @@ const { GOOGLE_API_URL } = require('./secrets.js');
 const fetch = require('node-fetch');
 
 const fetchGoogleResults = (req, res) => {
-  let searchQuery = 'monkeys';
+  let searchQuery = req.params.searchTerm;
   fetch(GOOGLE_API_URL + searchQuery, {
     method: 'GET',
     headers: {

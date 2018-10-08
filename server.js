@@ -3,18 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const secrets = require('./secrets');
 const { fetchTrendingTopics } = require('./twitter-fetch')
-{/* <script>
-  (function() {
-    var cx = '012027295086400924518:nkmgfk4hjww';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:searchresults-only></gcse:searchresults-only> */}
+const { fetchGoogleResults } = require('./google-fetch');
 
 let allowCORS = (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -26,5 +15,6 @@ let allowCORS = (req, res, next) => {
 app.use(bodyParser.json());
 app.use(allowCORS);
 app.get('/trends', fetchTrendingTopics)
+app.get('/search/:searchTerm', fetchGoogleResults)
 
 app.listen(5000);

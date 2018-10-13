@@ -17,4 +17,18 @@ let fetchTrendingTopics = (req, res) =>
     res.send(response)
   })
 
-module.exports = {fetchTrendingTopics}
+let tweetSearch = (req, res) => {
+  let searchQuery = req.params.searchTerm;
+  client.get('search/tweets', {q: searchQuery}, function(error, tweets, response) {
+    if (error) {
+      console.log(error);
+      res.send(error)
+    } else {
+      res.send(tweets);
+    }
+ });
+}
+
+tweetSearch(null, null)
+
+module.exports = {fetchTrendingTopics, tweetSearch}

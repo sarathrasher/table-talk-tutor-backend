@@ -20,4 +20,4 @@ let fetchBingResults = (req, res) => {
     res.send(err))
 }
 
-module.exports = {fetchBingResults}
+module.exports = { fetchBingResults }

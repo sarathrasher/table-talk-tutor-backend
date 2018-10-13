@@ -4,7 +4,7 @@ const app = express();
 const secrets = require('./secrets');
 const { fetchTrendingTopics, tweetSearch } = require('./twitter-fetch')
 const { fetchGoogleResults } = require('./google-fetch');
-const fetchBingResults = require('./bing-fetch')
+const { fetchBingResults } = require('./bing-fetch')
 
 let allowCORS = (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");

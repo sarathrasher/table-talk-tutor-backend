@@ -29,6 +29,4 @@ let tweetSearch = (req, res) => {
  });
 }
 
-tweetSearch(null, null)
-
 module.exports = {fetchTrendingTopics, tweetSearch}

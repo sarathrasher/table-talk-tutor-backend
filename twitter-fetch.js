@@ -18,15 +18,12 @@ let fetchTrendingTopics = (req, res) =>
   })
 
 let tweetSearch = (req, res) => {
-  let searchQuery = 'news'
-  // let searchQuery = req.params.searchTerm;
+  let searchQuery = req.params.searchTerm;
   client.get('search/tweets', {q: searchQuery, lang: 'en'}, function(error, tweets, response) {
     if (error) {
-      console.log(error);
-      // res.send(error)
+      res.send(error)
     } else {
-      console.log(tweets)
-      // res.send(tweets);
+      res.send(tweets);
     }
  });
 }
